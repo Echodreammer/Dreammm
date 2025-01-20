@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEREMY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- 引入Google字体 -->
+  <style>
+    body {
+      background-image: url('PicsArt_01-19-05.53.07.jpg'); /* 替换为你的图片路径 */
+      background-size: cover; /* 使图片覆盖整个背景 */
+      background-repeat: no-repeat; /* 防止图片重复 */
+      background-position: center; /* 将图片居中 */
+      height: 100vh; /* 确保背景覆盖整个视口高度 */
+      margin: 0; /* 移除默认的 body 外边距 */
+      font-family: 'Roboto', sans-serif; /* 设置字体 */
+    }
+    h1 {
+      color: #f2913d;
+      text-align: center; /* 将文字居中 */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影 */
+      background: linear-gradient(to right, #f2ddb6, #f2913d,#401607); /* 渐变色 */
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-stroke: 1px black; /* 添加细边框 */
+    }
+    h3 {
+      color: #f2913d;
+      text-align: center; /* 将文字居中 */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影 */
+      background: linear-gradient(to right, #f2ddb6, #f2913d,#401607); /* 渐变色 */
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-stroke: 1px black; /* 添加细边框 */
+    }
+    button {
+      background:  none;
+      border:none;
+      padding:0;
+      cursor: pointer;
+      display:inline-block;
+      width:100px;
+      height:100px;
+      border-radius: 50%;
+      overflow:hidden;
+      position: absolute;
+      bottom: 110px; /* 距离底部50px */
+      left: 47%;
+      transform: translateX(-50%);
+
+    }
+    .image-btn img {
+      width:100%;
+      height:100%;
+      object-fit: cover;
+    }
+
+    .image-btn{
+      clip-path: circle(50% at center);
+    }
+    button img {
+      width: 100%; /* 使图片适应按钮 */
+      height: 100%; /* 使图片适应按钮 */
+      
+    }
+  </style>
+</head>
+<body>
+  <h1>给张极送祝福吧！</h1>
+  <h3>点击小豆极跳转送祝福！</h3>
+
+  <!-- 按钮并绑定跳转功能 -->
+  <button onclick="goToTheNextPage()">
+    <img src="retouch_2025011819060461.png" alt="跳转按钮">
+  </button>
+
+  <script>
+    function goToTheNextPage() {
+      window.location.href = "JEREMY2.html"; /* 确保文件名与目标 HTML 一致 */
+    }
+  </script>
+</body>
+</html>

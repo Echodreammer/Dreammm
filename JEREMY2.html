@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEREMY2</title>
+  <style>
+    body {
+      position: relative;
+      height: 100vh; /* 确保背景覆盖整个视口高度 */
+      margin: 0; /* 移除默认的 body 外边距 */
+      overflow: hidden; /* 防止内容溢出 */
+    }
+    body:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('PicsArt_01-19-05.53.07.jpg'); /* 替换为你的图片路径 */
+      background-size: cover; /* 使图片覆盖整个背景 */
+      background-repeat: no-repeat; /* 防止图片重复 */
+      background-position: center top; /* 将图片向上移动 */
+      opacity: 0.5; /* 设置透明度 */
+      z-index: -1; /* 确保背景在内容后面 */
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align: center; margin-top: 50px;">
+    <h1>给18岁的张极送一个祝福吧</h1>
+
+    <!-- 第一区域 -->
+    <div style="margin: 20px;">
+      <h3>第一区域</h3>
+      <label for="input1">输入内容：</label>
+      <input type="text" id="input1" placeholder="请输入内容" style="padding: 5px; width: 200px;">
+    </div>
+
+    <!-- 第二区域 -->
+    <div style="margin: 20px;">
+      <h3>第二区域</h3>
+      <label for="input2">输入内容：</label>
+      <input type="text" id="input2" placeholder="请输入内容" style="padding: 5px; width: 200px;">
+    </div>
+
+    <!-- 提交按钮 -->
+<button id="submitBtn" style="padding: 10px 20px; background-color: #f2913d; color: white; border: none; cursor: pointer;">提交</button>
+
+    <!-- 跳转按钮 -->
+    <button onclick="goToTheNextPage()" style="padding: 10px 20px;background-color: #f2913d;color:white;border:none;cursor:pointer;"></button>
+
+    <script>
+      document.getElementById('submitBtn').addEventListener('click', function() {
+        var input1 = document.getElementById('input1').value;
+        var input2 = document.getElementById('input2').value;
+        var userMessage = input1 + ' : ' + input2;
+
+        // 获取现有的祝福语数组
+        var messages = JSON.parse(localStorage.getItem('messages')) || [];
+        // 添加新的祝福语
+        messages.push(userMessage);
+        // 将更新后的数组存储到localStorage
+        localStorage.setItem('messages', JSON.stringify(messages));
+
+        alert('输入1: ' + input1 + '\n输入2: ' + input2);
+      });
+  function goToTheNextPage() {
+    window.location.href = "JEREMY3.html"; /* 确保文件名与目标 HTML 一致 */
+  }
+  </script>
+  </div>
+</body>
+</html>

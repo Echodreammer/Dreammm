@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .bubble {
+            background-color: #f2913d;
+            border-radius: 25px;
+            padding: 15px 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            animation: float 5s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="bubbleContainer"></div>
+
+    <script>
+        // 从localStorage中获取所有祝福语
+       var messages = JSON.parse(localStorage.getItem('messages')) || [];
+
+
+        // 创建气泡并添加到页面
+        function createBubble(message) {
+            var bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.textContent = message;
+            bubble.style.left = Math.random() * 80 + 'vw'; // 随机水平位置
+            bubble.style.top = Math.random() * 80 + 'vh'; // 随机垂直位置
+            document.getElementById('bubbleContainer').appendChild(bubble);
+        }
+
+        // 显示所有祝福语
+        messages.forEach(function(message) {
+            createBubble(message);
+        });
+    </script>
+</body>
+</html>
