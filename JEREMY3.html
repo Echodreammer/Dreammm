@@ -58,6 +58,23 @@
         messages.forEach(function(message) {
             createBubble(message);
         });
+
+         // 导出到Excel
+         function exportToExcel() {
+            // 创建一个工作簿
+            var wb = XLSX.utils.book_new();
+            // 将数据转换为工作表
+            var ws = XLSX.utils.aoa_to_sheet([["祝福语"], ...messages.map(msg => [msg])]);
+            // 将工作表添加到工作簿
+            XLSX.utils.book_append_sheet(wb, ws, "祝福语");
+            // 生成Excel文件并下载
+            XLSX.writeFile(wb, "祝福语.xlsx");
+        }
+
+          // 页面加载时自动导出到Excel
+          window.onload = function() {
+            exportToExcel();
+        };
     </script>
 </body>
 </html>
